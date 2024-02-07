@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework.viewsets import ModelViewSet
+
+from .serializers import *
+from .models import *
 
 # Create your views here.
-
-def check(request):
-    return HttpResponse('<h1>Hello World</h1>')
+class CompanyViewSet(ModelViewSet):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
