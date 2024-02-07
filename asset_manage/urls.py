@@ -5,5 +5,6 @@ from .views import *
 router = DefaultRouter()
 
 router.register('company',CompanyViewSet,basename='company')
+router.register('device',DeviceViewSet,basename='device')
 
 urlpatterns = router.urls
