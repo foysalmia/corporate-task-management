@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     # external
     'rest_framework',
     'djoser',
+    'drf_spectacular',
     # internal
     'asset_manage',
     'authentication'
@@ -92,6 +93,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 SIMPLE_JWT = {
@@ -103,4 +105,8 @@ DJOSER = {
     'SERIALIZERS': {
         'user_create': 'authentication.serializers.UserCreateSerializer'
     }
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Corporate Asset Management',
 }
